@@ -22,19 +22,19 @@ function pushButton() {
 // Processing when the Omikuji button is pressed 
 function omikuji() {
   /** Get from mobile backend **/
-  // generate destination class 
+  // Generate destination class 
   const Omikuji = ncmb.DataStore("Omikuji");
-  // get processed
+  // Get processed
   Omikuji.fetchAll()
     .then(function (objects) {
-      /* get processing at the time of success */
-      // create a random number // number of data within the 
+      /* Get processing at the time of success */
+      // Greate a random number
       let random = Math.floor(Math.random() * objects.length);
-      // random number th data
+      // Random number th data
       let object = objects[random];
       // "result" field value acquisition
       let result = object.get("result");
-      // displaying the result on the screen 
+      // Displaying the result on the screen 
       document.getElementById("result").innerText = result;
     }).catch(function (error) {
       /* Processing when acquisition fails */
